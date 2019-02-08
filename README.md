@@ -1,6 +1,10 @@
 # Doorman
 
-This plugin guards the url you either don't want to show or you don't want to hit it too often. 
+Sometime you will need to access a third party url, if you have either of the following requirement then this plugin might be able to help you:
+
+- You want to hide the original url from the website user
+- You don't want to hit the original url too often and prefer the content being cached
+
 
 It helps to mask the original url, cache the result and serve it from a new url.
 
