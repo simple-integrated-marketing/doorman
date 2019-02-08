@@ -2,7 +2,6 @@
     "name": "simpleteam/doorman",
     "description": "This plugin guards the url you either don't want to show or you don't want to hit it too often",
     "type": "craft-plugin",
-    "version": "1.0.0",
     "keywords": [
         "craft",
         "cms",
