@@ -1,0 +1,48 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Doorman plugin for Craft CMS
+ *
+ * DoormanUtility Utility Content
+ *
+ * @author    Simple Integrated Marketing
+ * @copyright Copyright (c) 2019 Simple Integrated Marketing
+ * @link      https://simple.com.au
+ * @package   Doorman
+ * @since     1.0.0
+ */
+#}
+
+<h1>Doorman</h1>
+
+<p>There are currently {{ doors | length }} endpoint(s). The config can be found in the <b>{{ configPath }}</b></p>
+
+<hr>
+
+{% for door in doors %}
+    <div>
+        <h2>{{ door.name }}</h2>
+        <div class="fields">
+            <div class='field'>
+                <div class='heading'><label for="">Targeted Url:</label></div>
+                <div><a href="{{ door.url }}" target="_blank">{{ door.url }}</a></div>
+            </div>
+            <div class='field'>
+                <div class='heading'><label for="">Masked Url:</label></div>
+                <div><a href="{{ door.maskUrl }}" target="_blank">{{ door.maskUrl }}</a></div>
+            </div>
+            <div class='field'>
+                <div class='heading'><label for="">Cache Time (seconds)</label></div>
+                <div>{{ door.cacheSeconds }}</div>
+            </div>
+            <form action="/" method='post'>
+                <input type="hidden" value='doorman/default/flush-cache' name='action'>
+                {{ redirectInput(craft.app.request.url) }}
+                {{ csrfInput() }}
+                <input type="hidden" name='slug' value="{{ door.slug }}">
+                <button class='btn submit'>Clear Cache</button>
+            </form>
+        </div>
+    </div>
+    <hr>
+{% endfor %}

@@ -1,0 +1,41 @@
+{
+    "name": "simpleteam/doorman",
+    "description": "This plugin guards the url you either don't want to show or you don't want to hit it too oftern",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "doorman"
+    ],
+    "support": {
+        "docs": "https://github.com/simple-integrated-marketing/doorman/blob/master/README.md",
+        "issues": "https://github.com/simple-integrated-marketing/doorman/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Simple Integrated Marketing",
+            "homepage": "https://simple.com.au"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "simpleteam\\doorman\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Doorman",
+        "handle": "doorman",
+        "changelogUrl": "https://raw.githubusercontent.com/simple-integrated-marketing/doorman/master/CHANGELOG.md",
+        "components": {
+            "doormanService": "simpleteam\\doorman\\services\\DoormanService"
+        },
+        "class": "simpleteam\\doorman\\Doorman"
+    }
+}
